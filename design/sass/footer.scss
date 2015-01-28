@@ -1,0 +1,64 @@
+.footer {
+	background-color: $blue;
+	padding: 20px 0px;
+
+
+	@media (min-width: 920px) {
+
+		& > .container {
+			
+			width: 920px;
+		}
+
+	}
+
+	@media (max-width: 919px) {
+
+		& > .container {
+			width: 100%;
+		}
+
+		.allright {
+			text-align: center;
+			color: #FFF;
+		}
+
+		.sosmed {
+			text-align: center;
+
+			img {
+				margin: 0 5px;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.allright {
+			padding: 0 0 10px 0;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.allright {
+			text-align: right;
+			color: #FFF;
+			padding-top: 6px;
+		}
+
+		.sosmed {
+			text-align: right;
+
+			img {
+				margin: 0 5px;
+			}
+		}
+	}
+	
+	.transparant {
+		opacity: 0.5;
+	}
+
+	.email {
+		margin-left: 10px;
+	}
+}
