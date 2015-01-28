@@ -1,0 +1,243 @@
+$color_mercury_approx: #e7e7e7;
+$color_celeste_approx: #ccc;
+$color_desert_storm_approx: #f8f8f8;
+$color_chicago_approx: #5e5e5e;
+$color_alto_approx: #ddd;
+$color_suva_gray_approx: #888;
+
+/**
+ * Navigation Bar
+ */
+nav.navbar {
+
+	& > .container {
+		background-color: #FFFFFF;
+		
+	}
+
+	@media (min-width: 920px) {
+
+		& > .container {
+			height: 125px;
+			padding: 20px 20px 0 20px;
+			width: 920px;
+		}
+	}
+
+	@media (max-width: 919px) {
+
+		& > .container {
+			height: 125px;
+			width: 100%;
+			padding: 20px 20px 0 20px;			
+		}
+	}
+
+	@media (max-width: 767px) {
+		& > .container {
+			height: auto;
+			padding: 0 10px;			
+		}
+	}
+}
+
+/**
+ * Navbar Medtech
+ */
+.navbar-medtech {
+
+	font-weight: 300;
+	font-size: 18px;
+
+	.navbar-brand {
+		color: $black;
+		&:hover {
+			color: $color_chicago_approx;
+			background-color: transparent;
+		}
+		&:focus {
+			color: $color_chicago_approx;
+			background-color: transparent;
+		}
+	}
+	@media (max-width: 767px) {
+		.navbar-brand {
+			padding: 5px 0 5px 15px;
+			img {
+				height: 35px;
+			}
+		}
+	}
+
+	.navbar-text {
+		color: $black;
+	}
+	.navbar-toggle {
+		
+		.icon-bar {
+			background-color: $blue;
+
+
+		}
+	}
+
+	.navbar-collapse {
+		border-color: $color_mercury_approx;
+	}
+
+	@media (min-width: 768px) {
+		.navbar-collapse {
+			margin-top: 50px;
+			margin-right: 15px;
+
+			border-color: $color_mercury_approx;
+		}
+	}
+
+	.navbar-form {
+		border-color: $color_mercury_approx;
+	}
+	.navbar-link {
+		color: $black;
+		&:hover {
+			color: $blue;
+		}
+	}
+	.btn-link {
+		color: $black;
+		&:hover {
+			color: $blue;
+		}
+		&:focus {
+			color: $blue;
+		}
+	}
+	.btn-link[disabled] {
+		&:hover {
+			color: $color_celeste_approx;
+		}
+		&:focus {
+			color: $color_celeste_approx;
+		}
+	}
+	.navbar-nav > {
+
+		@media (min-width: 768px) {
+			li:not(:last-child) {
+				border-right: 1px solid $blue;
+			}
+		}
+
+		li > a {
+
+			color: $black;
+
+			&:hover {
+				color: $blue;
+				background-color: transparent;
+			}
+			&:focus {
+				color: $blue;
+				background-color: transparent;
+			}
+		}
+
+		@media (min-width: 768px) {
+
+			li > a {
+
+				padding-right: 0px;
+				padding-left: 0px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				margin-right: 10px;
+				margin-left: 10px;
+			}
+		}
+
+		.active > a {
+
+			font-weight: bold;
+			color: $blue;
+			border-bottom: 3px solid $blue;
+
+			&:hover {
+				color: $blue;
+			}
+			&:focus {
+				color: $blue;
+			}
+		}
+		.disabled > a {
+			color: $color_celeste_approx;
+			background-color: transparent;
+			&:hover {
+				color: $color_celeste_approx;
+				background-color: transparent;
+			}
+			&:focus {
+				color: $color_celeste_approx;
+				background-color: transparent;
+			}
+		}
+		.open > a {
+			color: $blue;
+			background-color: $color_mercury_approx;
+			&:hover {
+				color: $blue;
+				background-color: $color_mercury_approx;
+			}
+			&:focus {
+				color: $blue;
+				background-color: $color_mercury_approx;
+			}
+		}
+	}
+}
+@media(max-width: 767px) {
+	.navbar-medtech .navbar-nav .open .dropdown-menu > {
+		li > a {
+			color: $black;
+			&:hover {
+				color: $blue;
+				background-color: transparent;
+			}
+			&:focus {
+				color: $blue;
+				background-color: transparent;
+			}
+		}
+		.active > a {
+			color: $blue;
+			background-color: $color_mercury_approx;
+			&:hover {
+				color: $blue;
+				background-color: $color_mercury_approx;
+			}
+			&:focus {
+				color: $blue;
+				background-color: $color_mercury_approx;
+			}
+		}
+		.disabled > a {
+			color: $color_celeste_approx;
+			background-color: transparent;
+			&:hover {
+				color: $color_celeste_approx;
+				background-color: transparent;
+			}
+			&:focus {
+				color: $color_celeste_approx;
+				background-color: transparent;
+			}
+		}
+	}
+}
+fieldset[disabled] .navbar-medtech .btn-link {
+	&:hover {
+		color: $color_celeste_approx;
+	}
+	&:focus {
+		color: $color_celeste_approx;
+	}
+}
