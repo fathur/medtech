@@ -15,16 +15,16 @@ nav.navbar {
 		
 	}
 
-	@media (min-width: 920px) {
+	@media (min-width: $container-width) {
 
 		& > .container {
 			height: 125px;
 			padding: 20px 20px 0 20px;
-			width: 920px;
+			width: $container-width;
 		}
 	}
 
-	@media (max-width: 919px) {
+	@media (max-width: ($container-width - 1)) {
 
 		& > .container {
 			height: 125px;
@@ -240,4 +240,29 @@ fieldset[disabled] .navbar-medtech .btn-link {
 	&:focus {
 		color: $color_celeste_approx;
 	}
+}
+
+/**
+ * Untuk slider di halaman awal saja
+ */
+// -> http://www.weblinc.com/labs/jquery-parallax/
+.header-slider {
+
+	background-color: #d9dbfc;
+
+	.carousel {
+		height: 565px;	
+	}
+
+	.carousel-indicators {
+		text-align: right;
+	}
+}
+
+/**
+ * Untuk header disetiap halaman
+ * tapi ini bukan slider
+ */
+.header-content {
+
 }

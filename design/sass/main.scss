@@ -6,4 +6,35 @@ body {
 @import 'variable';
 @import 'header';
 @import 'content';
+@import 'sidebar'; 
 @import 'footer'; 
+
+.container.body {
+	width: $container-width;
+	padding-top: 100px;
+}
+
+h1 {
+
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 300;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}

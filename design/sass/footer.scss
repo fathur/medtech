@@ -3,16 +3,16 @@
 	padding: 20px 0px;
 
 
-	@media (min-width: 920px) {
+	@media (min-width: $container-width) {
 
 		& > .container {
 			
-			width: 920px;
+			width: $container-width;
 		}
 
 	}
 
-	@media (max-width: 919px) {
+	@media (max-width: ($container-width - 1)) {
 
 		& > .container {
 			width: 100%;

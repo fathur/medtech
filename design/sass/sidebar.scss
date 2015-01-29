@@ -1,0 +1,163 @@
+.sidebar {
+
+
+
+	& > div.row {
+		margin-bottom: 30px;
+	}
+
+	.get-touch {
+		background-color: $blue;
+		padding: 15px;
+		color: #FFF;
+
+		li {
+			padding: 5px 0;
+
+			a {
+				color: #FFF;
+				font-weight: bold;
+			}
+
+			& > img {
+				width: 30px;
+			}
+		}
+	}
+
+	.save-date {
+		.img-wrapper {
+
+			position: relative;
+
+			figcaption,
+			.caption {
+				position: absolute;
+				bottom: 0;
+				background-image: url('../img/dot-blue.png');
+				padding: 10px;
+
+				& > date,
+				& > .date {
+					color: #7edbe1;
+					font-size: 24px;
+					float: left;
+				}
+
+				& > .caption-title {
+					color: #FFF;
+					float: left;
+					font-family: 'Ubuntu Condensed', sans-serif;
+					font-size: 18px;
+				}
+			}
+		}
+
+		& > a {
+			text-transform: uppercase;
+			color: $blue;
+			margin: 10px 0 0 0;
+			display: block;
+		}
+	}
+
+	.reasons-join {
+		li {
+
+			background-image: url('../img/arrow-gray-right.png');
+			background-repeat: no-repeat;
+			background-position: 0px 8px;
+			color: $blue;
+			padding: 6px 0 6px 30px;
+		}
+	}
+
+	.other-jobs,
+	.other-news,
+	.past-events {
+		background-color: $gray;
+		padding: 15px;
+
+		li {
+			background-image: url('../img/arrow-white-right.png');
+			background-repeat: no-repeat;
+			background-position: 0px 8px;
+			padding: 6px 0 6px 30px;
+
+			& > a {
+				color: $blue;
+
+			}
+		}
+	}
+
+	.events {
+		li {
+
+			background-image: url('../img/calender.png');
+			background-repeat: no-repeat;
+			background-position: 0px 0px;
+			padding: 0px 0 10px 30px;
+			border-bottom: 1px solid $blue;
+
+
+			& > h3,
+			& > h3 > a {
+				color: $blue;
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			& > date,
+			& > .date {
+				color: $blue;
+			}
+		}
+
+		& > a {
+			text-transform: uppercase;
+			color: $blue;
+			margin: 10px 0 0 0;
+			display: block;
+		}
+	}
+
+	.members {
+		.carousel-inner {
+			& > .item {
+				img {
+					margin: 0 auto;
+				}
+			}
+		}
+		.carousel-control {
+			background-image: none !important;
+
+			&.left {
+
+				& > img {
+
+					left: 0;
+				}
+
+
+			}
+
+			&.right {
+
+				& > img {
+					right: 0;
+
+				}
+
+			}
+
+			& > img {
+				position: absolute;
+				top: 40%;
+				z-index: 5;
+				display: inline-block;
+			}
+		}
+	}
+}
