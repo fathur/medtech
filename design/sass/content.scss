@@ -1,3 +1,42 @@
 .content {
 	min-height: 600px;
+	padding-right: 45px;
+
+	article.item.news,
+	.item.news {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-bottom: 25px;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $blue;
+
+		}
+
+		h3,
+		h3 > a {
+			color: $blue;
+			margin-top: 0px;
+		}
+
+		.isi {
+			& > .date {
+				color: $blue;
+			}
+		}
+
+		.readmore {
+			text-transform: uppercase;
+			color: $blue;
+			padding-top:10px;
+			padding-bottom:10px;
+			display: inline-block;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
+
