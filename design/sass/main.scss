@@ -9,9 +9,28 @@ body {
 @import 'sidebar'; 
 @import 'footer'; 
 
-.container.body {
-	width: $container-width;
-	padding-top: 100px;
+
+@media (min-width: $container-width) {
+
+	.container.body {
+
+		width: $container-width;
+		padding-top: 100px;
+	}
+}
+
+@media (max-width ($container-width -1 )) {
+	
+	.container.body {
+
+		width: 100%;
+	}	
+}
+
+@media (min-width: 768px) and (max-width: ($container-width - 1 )) {
+	.container.body {
+		padding-top: 50px;
+	}
 }
 
 h1 {

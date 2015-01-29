@@ -1,7 +1,5 @@
 .sidebar {
 
-
-
 	& > div.row {
 		margin-bottom: 30px;
 	}
@@ -30,10 +28,17 @@
 
 			position: relative;
 
+			& > img {
+				width: 100%;
+				
+			}
+
 			figcaption,
 			.caption {
 				position: absolute;
 				bottom: 0;
+				right: 0;
+				left: 0;
 				background-image: url('../img/dot-blue.png');
 				padding: 10px;
 
@@ -41,23 +46,31 @@
 				& > .date {
 					color: #7edbe1;
 					font-size: 24px;
-					float: left;
+					display: block;
 				}
 
 				& > .caption-title {
 					color: #FFF;
-					float: left;
 					font-family: 'Ubuntu Condensed', sans-serif;
 					font-size: 18px;
+					display: block;
+				}
+			}
+
+			@media (max-width: 767px) {
+				figcaption,
+				.caption {
+					
 				}
 			}
 		}
 
-		& > a {
-			text-transform: uppercase;
-			color: $blue;
-			margin: 10px 0 0 0;
-			display: block;
+		
+
+		@media (max-width: 767px) {
+			& > h2 {
+				padding: 0 15px;
+			}
 		}
 	}
 
@@ -69,6 +82,16 @@
 			background-position: 0px 8px;
 			color: $blue;
 			padding: 6px 0 6px 30px;
+		}
+
+		@media (max-width: 767px) {
+			& > h2 {
+				padding: 0 15px;
+			}
+
+			& > ul {
+				padding: 0 15px;
+			}
 		}
 	}
 
@@ -96,8 +119,6 @@
 
 			background-image: url('../img/calender.png');
 			background-repeat: no-repeat;
-			background-position: 0px 0px;
-			padding: 0px 0 10px 30px;
 			border-bottom: 1px solid $blue;
 
 
@@ -114,15 +135,32 @@
 			}
 		}
 
-		& > a {
-			text-transform: uppercase;
-			color: $blue;
-			margin: 10px 0 0 0;
-			display: block;
+		
+
+		@media (min-width: 768px) {
+			li {
+
+				background-position: 0px 0px;
+				padding: 0px 0 10px 30px;
+			}
+		}
+
+		@media (max-width: 767px) {
+
+			li {
+				background-position: 15px 0px;
+				padding: 0px 15px 10px 45px;
+			}
+
+			& > h2 {
+				padding: 0 15px;
+			}
 		}
 	}
 
 	.members {
+
+
 		.carousel-inner {
 			& > .item {
 				img {
@@ -159,5 +197,34 @@
 				display: inline-block;
 			}
 		}
+
+		
+	}
+
+	@media (max-width: 767px) {
+		.members {
+			padding: 0 15px;
+		}
+	}
+}
+
+
+.view-all {
+	text-transform: uppercase;
+	color: $blue;
+	margin: 10px 0 0 0;
+}
+
+@media (min-width: 768px) {
+	.view-all {
+		
+		display: inline-block;
+	}
+}
+
+@media (max-width: 767px) {
+	.view-all {
+		display: block;
+		text-align: center;
 	}
 }

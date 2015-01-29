@@ -1,9 +1,9 @@
 .content {
 	min-height: 600px;
-	padding-right: 45px;
 
 	article.item.news,
 	.item.news {
+
 		padding-top: 20px;
 		padding-bottom: 20px;
 		margin-bottom: 25px;
@@ -13,10 +13,19 @@
 
 		}
 
+
 		h3,
 		h3 > a {
 			color: $blue;
 			margin-top: 0px;
+		}
+
+		@media (max-width: 767px) {
+
+			/* .img-featured {
+				width: 100%;
+				margin-bottom: 30px;
+			} */
 		}
 
 		.isi {
@@ -37,6 +46,12 @@
 				text-decoration: underline;
 			}
 		}
+	}
+}
+
+@media (min-width: 768px) {
+	.content {
+		padding-right: 45px;
 	}
 }
 
