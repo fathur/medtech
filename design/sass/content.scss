@@ -1,5 +1,4 @@
 .content {
-	min-height: 600px;
 
 	article.item.news,
 	.item.news {
@@ -10,22 +9,12 @@
 
 		&:not(:last-child) {
 			border-bottom: 1px solid $blue;
-
 		}
-
 
 		h3,
 		h3 > a {
 			color: $blue;
 			margin-top: 0px;
-		}
-
-		@media (max-width: 767px) {
-
-			/* .img-featured {
-				width: 100%;
-				margin-bottom: 30px;
-			} */
 		}
 
 		.isi {
