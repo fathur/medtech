@@ -41,6 +41,9 @@
 		}
 	}
 
+	/**
+	 * Membership and memberlists
+	 */
 	.membership {
 		
 		ul {
@@ -66,6 +69,38 @@
 
 	}
 
+	.memberlists {
+
+		h3 {
+			color: $blue;
+		}
+
+		.members {
+
+			margin-bottom: 45px;
+			.item {
+
+				& > img {
+					width: 100%;
+					border: 2px solid $gray;
+				}
+
+				& > figcaption,
+				& > .figcaption {
+
+					color: $blue;
+					text-transform: uppercase;
+					margin-top: 10px;
+					margin-bottom: 10px;
+
+					& > img {
+
+					}
+				}
+			}
+		}
+	}
+
 	/**
 	 * Events
 	 */
@@ -73,10 +108,8 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 		margin-bottom: 25px;
-
-		&:not(:last-child) {
-			border-bottom: 1px solid $blue;
-		}
+		border-bottom: 1px solid $blue;
+		
 
 		h3,
 		h3 > a {
@@ -146,6 +179,10 @@
 
 			}
 		}
+
+		.register-now {
+			margin: 80px 0 50px 0;
+		}
 	}
 }
 
@@ -167,3 +204,102 @@
 		text-decoration: underline;
 	}
 }
+
+.bottom-link {
+	border-top: 1px solid $gray;
+	border-bottom: 1px solid $gray;
+	padding: 10px 0;
+	margin-top: 15px;
+
+	a {
+		padding-left: 10px;
+		color: $blue;
+	}
+}
+
+/**
+ * Btn-medtech
+ */
+.btn-medtech {
+  color: #FFF;
+  background-color: $blue;
+  border-color: $blue;
+  border-radius: 0px;
+
+  &:hover, 
+  &:focus, 
+  &.focus, 
+  &:active, 
+  &.active {
+    color: #FFF;
+    background-color: $blue;
+    border-color: $blue;
+  }
+
+   &:active, 
+   &.active {
+    background-image: none;
+  }
+
+  &.disabled, 
+  &[disabled] {
+    background-color: #fff;
+    border-color: #ccc;
+
+	  &:hover {
+	    background-color: #fff;
+	    border-color: #ccc;
+	  }
+
+	  &:focus,
+	  &.focus {
+    	background-color: #fff;
+    	border-color: #ccc;
+  	  }
+
+	  &:active,
+	  &.active {
+	    background-color: #fff;
+	    border-color: #ccc;
+	  }
+  }
+
+  .badge {
+	  color: #fff;
+	  background-color: #333;
+	}
+}
+
+.open > .dropdown-toggle.btn-medtech {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.open > .dropdown-toggle.btn-medtech {
+  background-image: none;
+}
+
+
+fieldset[disabled] .btn-medtech {
+  background-color: #fff;
+  border-color: #ccc;
+
+  	&:hover {
+	  background-color: #fff;
+	  border-color: #ccc;
+	}
+
+	&:focus,
+	&.focus {
+	  background-color: #fff;
+	  border-color: #ccc;
+	}
+
+	&:active,
+	&.active {
+	  background-color: #fff;
+	  border-color: #ccc;
+	}
+}
+
