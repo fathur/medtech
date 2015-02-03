@@ -49,8 +49,16 @@
 				padding-bottom: 15px;
 			}
 
+			p {
+				padding-bottom: 0px;
+			}
+
+			.img-featured {
+				width: 100%;
+			}
+
 			.isi {
-				& > .date {
+				.date {
 					color: $blue;
 				}
 			}
