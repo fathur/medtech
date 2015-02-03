@@ -17,7 +17,8 @@
 		<?php endif; ?>
 
 		<div class="isi">
-			<span class="date"><?php the_date('d.m.y'); ?></span> <?php the_excerpt(); ?>
+			<span class="date-hidden hide"><?php echo get_the_date('d.m.y'); ?></span> 
+			<?php the_excerpt(); ?>
 		</div>
 
 		<a href="<?php the_permalink(); ?>" class="readmore">Read more</a>

@@ -42,10 +42,8 @@ get_header(); ?>
 
 <div class="container body">
 	<div class="row">
+		
 		<div class="col-sm-9 content">
-
-			
-
 			<div class="row news">
 				<div class="col-xs-12">
 					<h1>Latest News</h1>
@@ -57,7 +55,6 @@ get_header(); ?>
 					<?php else: ?>
 						<?php get_template_part( 'content', 'none' ); ?>
 					<?php endif; ?>
-					
 				</div>
 			</div>
 		</div>
@@ -65,4 +62,13 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>
+
+<script>
+	var paragraph = $('.content .news article .isi p');
+
+	paragraph.each(function(i) {
+		var tgl = $(this).prev('span.date-hidden').html();
+		$(this).prepend('<span class="date">'+tgl+'&nbsp;&nbsp;</span>');
+	});
+</script>
 <?php get_footer(); ?>

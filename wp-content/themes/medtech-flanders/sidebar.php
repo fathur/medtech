@@ -1,40 +1,7 @@
 <div class="col-sm-3 sidebar">
-
-	<div class="row get-touch">
-		<h2><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> Get In Touch</h2>
-
-		<p><b>MedTech Flanders vzw</b>
-		<br/>
-		Gaston Crommenlaan 8/102 9050 Gent</p>
-
-		<ul class="list-unstyled">
-			<li>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png"> 
-				<a href="#">@MedTechFlanders</a>
-			</li>
-			<li>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"> 
-				<a href="#">MedTechFlanders</a>
-			</li>
-			<li>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/mail.png"> 
-				<a href="#">mail us</a>
-			</li>
-		</ul>
-
-	</div>
-
-	<div class="row other-jobs">
-		<h2>Other Jobs</h2>
-		<ul class="list-unstyled">
-			<li><a href="#">System engineer - Barco</a></li>
-			<li><a href="#">It Service manager - Barco</a></li>
-			<li><a href="">System engineer System engineer - Barco</a></li>
-			<li><a href="#">System engineer - Barco</a></li>
-
-		</ul>
-	</div>
 	
+	<!-- home, -->
+	<?php if (is_home() || is_front_page()) : ?>
 	<div class="row save-date">
 		<h2>Save The Date</h2>
 
@@ -49,7 +16,10 @@
 
 		<a href="#" class="view-all">View Details</a>
 	</div>
+	<?php endif; ?>
 
+	<!-- home, -->
+	<?php if (is_home() || is_front_page()) : ?>
 	<div class="row reasons-join">
 		<h2>Reasons To Join</h2>
 
@@ -59,7 +29,10 @@
 			<li>Share infrastructure and lower overhead costs</li>
 		</ul>
 	</div>
+	<?php endif; ?>
 
+	<!-- home, -->
+	<?php if (is_home() || is_front_page()) : ?>
 	<div class="row events">
 		<h2>Upcoming event</h2>
 		<ul class="list-unstyled">
@@ -83,7 +56,10 @@
 		<a href="#" class="view-all">View all events</a>
 
 	</div>
+	<?php endif; ?>
 
+	<!-- home, -->
+	<?php if (is_home() || is_front_page()) : ?>
 	<div class="row members">
 		<h2>Members</h2>
 
@@ -115,4 +91,6 @@
 			
 		</div>
 	</div>
+	<?php endif; ?>
+	
 </div>
