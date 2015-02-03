@@ -248,14 +248,35 @@ fieldset[disabled] .navbar-medtech .btn-link {
 // -> http://www.weblinc.com/labs/jquery-parallax/
 .header-slider {
 
-	background-color: #d9dbfc;
+	
 
 	.carousel {
-		height: 565px;	
+		height: 565px;
+		overflow: hidden;
 	}
 
 	.carousel-indicators {
 		text-align: right;
+	}
+
+	.carousel-inner {
+		.item {
+
+			position: relative;
+
+			.layer {
+				position: absolute;
+				top: 0px;
+
+				&.l1 {
+					img {
+						width: 100%;
+					}
+				}
+			}
+
+			
+		}
 	}
 }
 
@@ -264,6 +285,52 @@ fieldset[disabled] .navbar-medtech .btn-link {
  * tapi ini bukan slider
  */
 .header-content {
-	height: 275px;
-	background-color: $gray;
+	height: $header-content-height;
+
+	.circle {
+
+		position: absolute;
+		height: $header-content-height;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		z-index: 100;
+
+		& > img {
+			position: absolute;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.circle {
+			& > img {
+				bottom: -20%;
+
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		.circle {
+			
+			& > img {
+				bottom: -210px;
+
+			}
+		}
+	}
+
+	.image {
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		right: 0;
+		height: $header-content-height;
+		z-index: 10;
+
+		& > img {
+			width: 100%;
+		}
+	}
 }
