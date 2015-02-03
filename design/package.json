@@ -1,0 +1,31 @@
+{
+  "name": "medtech-flanders",
+  "version": "1.0.0",
+  "description": "MedTech Flanders",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-sass": "~0.8.1 "
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "matchdep": "~0.1.2",
+    "grunt-express": "~1.0.0-beta2",
+    "grunt-open": "~0.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/fostrom/medtech-flanders"
+  },
+  "keywords": [
+    "yelloow",
+    "kuning"
+  ],
+  "author": "Fathur Rohman, Fostrom, Akung",
+  "license": "Apache"
+}
