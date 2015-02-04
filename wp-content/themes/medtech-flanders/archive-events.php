@@ -24,10 +24,16 @@ get_header(); ?>
 			<div class="row <?php medtech_class(); ?>">
 				<div class="col-xs-12">
 
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'content', 'page-single' ); ?>
-					<?php endwhile; ?>
+					<h1>Upcoming Events</h1>
 
+					<?php if ( have_posts() ) : ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'content', 'event' ); ?>
+						<?php endwhile; ?>
+					<?php else: ?>
+						<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif; ?>
+					
 				</div>
 			</div>
 		</div>
