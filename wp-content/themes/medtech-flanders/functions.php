@@ -24,6 +24,21 @@ add_action('wp_enqueue_scripts','load_scripts');
 /**
  * Closure
  */
-function medtech_class() {
+function medtech_class($echo = true) {
 	
+	global $post;
+	
+	if (is_page()) {
+
+		$class = get_post( $post )->post_name;
+
+	} elseif (is_single()) {
+		$class = get_post_type();
+	}
+
+	if ($echo) {
+		echo $class;
+	} else {
+		return $class;
+	}
 }
