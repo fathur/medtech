@@ -22,6 +22,31 @@ function load_scripts() {
 add_action('wp_enqueue_scripts','load_scripts');
 
 /**
+ * Adding additional default css class responsive 
+ * into every image inside content
+ * 
+ * @reference 	http://stackoverflow.com/questions/20473004/how-to-add-automatic-class-in-image-for-wordpress-post
+ * 
+ */
+function add_responsive_class($content){
+
+	$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+	$document = new DOMDocument();
+	libxml_use_internal_errors(true);
+	$document->loadHTML(utf8_decode($content));
+
+	$imgs = $document->getElementsByTagName('img');
+	foreach ($imgs as $img) {           
+		$existing_class = $img->getAttribute('class');
+		$img->setAttribute('class', "$existing_class img-responsive");
+	}
+
+	$html = $document->saveHTML();
+	return $html;   
+}
+add_filter('the_content', 'add_responsive_class');
+
+/**
  * Closure
  */
 function medtech_class($echo = true) {

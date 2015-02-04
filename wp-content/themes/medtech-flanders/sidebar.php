@@ -1,4 +1,43 @@
 <div class="col-sm-3 sidebar">
+
+	<?php if ($pagename == 'about-us') : ?>
+	<div class="row get-touch">
+		<h2><img src="img/balloon.png"> Get In Touch</h2>
+
+		<p><b>MedTech Flanders vzw</b>
+		<br/>
+		Gaston Crommenlaan 8/102 9050 Gent</p>
+
+		<ul class="list-unstyled">
+			<li>
+				<img src="img/twitter.png"> 
+				<a href="#">@MedTechFlanders</a>
+			</li>
+			<li>
+				<img src="img/linkedin.png"> 
+				<a href="#">MedTechFlanders</a>
+			</li>
+			<li>
+				<img src="img/mail.png"> 
+				<a href="#">mail us</a>
+			</li>
+		</ul>
+	</div>
+	<?php endif; ?>
+
+	<?php if (false) : ?>
+	<div class="row other-jobs">
+		<h2>Other Jobs</h2>
+		<ul class="list-unstyled">
+			<li><a href="#">System engineer - Barco</a></li>
+			<li><a href="#">It Service manager - Barco</a></li>
+			<li><a href="">System engineer System engineer - Barco</a></li>
+			<li><a href="#">System engineer - Barco</a></li>
+
+		</ul>
+	</div>
+	<?php endif; ?>
+
 	
 	<!-- home, -->
 	<?php if (is_home() || is_front_page()) : ?>
@@ -19,7 +58,7 @@
 	<?php endif; ?>
 
 	<!-- home, -->
-	<?php if (is_home() || is_front_page()) : ?>
+	<?php if (is_home() || is_front_page() || $pagename == 'about-us' ) : ?>
 	<div class="row reasons-join">
 		<h2>Reasons To Join</h2>
 
@@ -32,7 +71,7 @@
 	<?php endif; ?>
 
 	<!-- home, -->
-	<?php if (is_home() || is_front_page()) : ?>
+	<?php if (is_home() || is_front_page() || $pagename == 'about-us' ) : ?>
 	<div class="row events">
 		<h2>Upcoming event</h2>
 		<ul class="list-unstyled">
@@ -59,7 +98,7 @@
 	<?php endif; ?>
 
 	<!-- home, -->
-	<?php if (is_home() || is_front_page()) : ?>
+	<?php if (is_home() || is_front_page() || $pagename == 'about-us') : ?>
 	<div class="row members">
 		<h2>Members</h2>
 
