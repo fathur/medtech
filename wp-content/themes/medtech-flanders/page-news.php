@@ -22,7 +22,7 @@ get_header(); ?>
 		
 		<div class="col-sm-9 content">
 			<div class="row <?php medtech_class(); ?>">
-				<div class="col-xs-12">
+				<div class="col-xs-12" id="container-scroll">
 
 					<h1>Latest News </h1>
 
@@ -47,9 +47,11 @@ get_header(); ?>
 			<div class="row text-center">
 				<div class="col-xs-12">
 					
-					<a href="#" class="btn btn-block btn-medtech-white">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/refresh.png"> scroll to load more events
+					<a href="#" class="btn btn-block btn-medtech-white" id="load">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/refresh.png"> scroll to load more news
 					</a>
+
+					<input type="hidden" class="hide" id="paged" value="1" />
 				</div>
 			</div>
 		</div>
@@ -64,6 +66,50 @@ get_header(); ?>
 	paragraph.each(function(i) {
 		var tgl = $(this).prev('span.date-hidden').html();
 		$(this).prepend('<span class="date">'+tgl+'&nbsp;&nbsp;</span>');
+	});
+
+	/**
+	 * Aksi untuk meload page
+	 */
+	function loadArticle() {
+
+		var paged = $('#paged').val();
+
+		if (paged !== 0 || paged !== null || paged !== '') {
+			paged++;
+
+			$('#paged').val(paged);
+		};
+
+		$.get('<?php echo bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php',{
+			
+			action: 'load_infinite_scroll',
+			page_no: paged,
+			loop_file: 'news'
+
+		}, function(resp) {
+
+			$('#container-scroll').append(resp);
+		});
+	}
+
+	/**
+	 * Load page ketika window scroll sudah sampai di bawah
+	 */
+	$(window).scroll(function() {
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+			loadArticle();
+		};
+	});
+
+	/**
+	 * Load page ketika button load more di klik
+	 */
+	$('#load').click(function(e) {
+
+		e.preventDefault();
+
+		loadArticle();
 	});
 </script>
 <?php get_footer(); ?>
