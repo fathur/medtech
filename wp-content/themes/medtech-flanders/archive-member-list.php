@@ -29,78 +29,26 @@ get_header(); ?>
 				<div class="col-xs-12">
 					
 					<div class="row members">
+
+
+						<?php if ( have_posts() ) : ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+							
+
+
 						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
+							<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+
 							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
+								<img src="<?php echo get_template_directory_uri(); ?>/img/arrow-gray-right.png"> <?php the_title(); ?>
 							</figcaption>
 						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
-						<div class="col-xs-12 col-sm-3 item">
-							<img src="img/ex-ziekenhuis.jpg" class="img-responsive">
-							<figcaption>
-								<img src="img/arrow-gray-right.png"> Uz Bruzzel Uz Bruzzel Uz Bruzzel Uz Bruzzel
-							</figcaption>
-						</div>
+
+							<?php endwhile; ?>
+						<?php else: ?>
+							<?php get_template_part( 'content', 'none' ); ?>
+						<?php endif; ?>
+						
 					</div>
 				</div>
 				<article class="col-xs-12">
