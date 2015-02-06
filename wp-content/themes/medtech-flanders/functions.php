@@ -46,6 +46,13 @@ function add_responsive_class($content){
 }
 add_filter('the_content', 'add_responsive_class');
 
+/**
+ * Add shortcode for membership page
+ */
+function button_view_members() {
+	return "<p class='view-members'><a href='".get_post_type_archive_link('member-list')."' class='btn btn-lg btn-medtech btn-view-member'><img src='".get_template_directory_uri()."/img/handshake.png'> View Members</a></p>";
+}
+add_shortcode('btn-members', 'button_view_members');
 
 require get_template_directory() . '/inc/helper.php';
 require get_template_directory() . '/inc/infinite-scroll.php';
