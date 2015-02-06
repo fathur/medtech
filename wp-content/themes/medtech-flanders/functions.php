@@ -5,7 +5,7 @@ add_theme_support( "title-tag" );
 add_theme_support( "custom-header", array() );
 add_theme_support( "custom-background", array() );
 
-add_theme_support( 'html5', array( 'search-form' ) );
+add_theme_support( 'html5', array( 'search-form', 'caption' ) );
 add_theme_support( 'automatic-feed-links' );
 add_filter('show_admin_bar', '__return_false');
 
@@ -46,29 +46,6 @@ function add_responsive_class($content){
 }
 add_filter('the_content', 'add_responsive_class');
 
-/**
- * Closure
- */
-function medtech_class($echo = true) {
-	
-	global $post;
-	
-	if (is_page()) 
-	{
-		$class = get_post( $post )->post_name;
-	} 
-	elseif (is_single()) 
-	{
-		$class = get_post_type();
-	} 
-	elseif (is_archive()) 
-	{
-		$class = get_post_type();
-	}
 
-	if ($echo) {
-		echo $class;
-	} else {
-		return $class;
-	}
-}
+require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/infinite-scroll.php';
