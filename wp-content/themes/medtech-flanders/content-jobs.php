@@ -29,7 +29,7 @@
 					<?php the_excerpt(); ?>
 				</div>
 
-				<a href="<?php the_permalink(); ?>" class="readmore">Read more job</a>
+				<a href="<?php the_permalink(); ?>" class="readmore">Read more</a>
 			</div>
 
 			

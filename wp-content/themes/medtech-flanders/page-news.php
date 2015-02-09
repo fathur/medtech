@@ -42,7 +42,8 @@ get_header(); ?>
 						<?php get_template_part( 'content', 'none' ); ?>
 					<?php endif; 
 
-					wp_reset_postdata(); ?>
+					wp_reset_postdata(); 
+					wp_reset_query(); ?>
 				</div>
 			</div>
 

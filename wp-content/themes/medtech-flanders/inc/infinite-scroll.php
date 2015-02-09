@@ -27,6 +27,7 @@ function load_infinite_scroll() {
  	endif; 
 
  	wp_reset_postdata();
+ 	wp_reset_query();
 
 	exit;
 }

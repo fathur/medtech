@@ -19,6 +19,7 @@ get_header(); ?>
 
 <div class="container body">
 	<div class="row">
+
 		
 		<div class="col-sm-9 content">
 			<div class="row <?php medtech_class(); ?>">
@@ -26,23 +27,20 @@ get_header(); ?>
 
 					<h1>Jobs</h1>
 
-					<?php 
-
-					$query = new WP_Query(array(
-						'post_type'	=> get_post_type()
-					));
-
-					if ( $query->have_posts() ) : ?>
+					<?php if ( have_posts() ) : ?>
 
 
-						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'content', 'job' ); ?>
+							<?php get_template_part( 'content', 'jobs' ); ?>
 
 						<?php endwhile; ?>
 					<?php else: ?>
 						<?php get_template_part( 'content', 'none' ); ?>
-					<?php endif; ?>
+					<?php endif; 
+
+ 					wp_reset_postdata();
+ 					wp_reset_query(); ?>
 					
 				</div>
 			</div>

@@ -26,6 +26,8 @@ get_header(); ?>
 
 					<h1>Upcoming Events</h1>
 
+					<?php var_dump(get_post_type()); ?>
+
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', 'event' ); ?>
