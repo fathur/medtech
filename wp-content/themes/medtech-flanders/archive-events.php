@@ -9,12 +9,14 @@ get_header(); ?>
 
 <div class="fluid-container header header-content">
 	<div class="circle">
-		<img src="img/circle.png" class="img-responsive">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/circle.png" class="img-responsive">
 	</div>
 
 	<div class="image">
-		<img src="img/content/aboutus.jpg" class="img-responsive">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/content/aboutus.jpg" class="img-responsive">
 	</div>
+
+	
 </div>
 
 <div class="container body">
@@ -26,7 +28,6 @@ get_header(); ?>
 
 					<h1>Upcoming Events</h1>
 
-					<?php var_dump(get_post_type()); ?>
 
 					<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>

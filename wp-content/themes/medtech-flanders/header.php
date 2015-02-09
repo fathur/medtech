@@ -38,9 +38,9 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right" role="menu">
-					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="http://localhost/medtech-flanders/about-us/">About Us</a></li>
 					<li><a href="news.html">News</a></li>
-					<li class="active"><a href="events.html">Events</a></li>
+					<li class="active"><a href="http://localhost/medtech-flanders/events/">Events</a></li>
 					<li><a href="membership.html">Membership</a></li>
 					<li><a href="jobs.html">Jobs</a></li>
 				</ul>
