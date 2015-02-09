@@ -40,7 +40,9 @@ get_header(); ?>
 						<?php endwhile; ?>
 					<?php else: ?>
 						<?php get_template_part( 'content', 'none' ); ?>
-					<?php endif; ?>
+					<?php endif; 
+
+					wp_reset_postdata(); ?>
 				</div>
 			</div>
 
