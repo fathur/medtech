@@ -23,9 +23,8 @@ get_header(); ?>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 
-				<div class="layer-1">
+				<div class="layer-1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/content/slider-1.jpg'); background-position: center -30px;">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/img/content/slider-1.jpg" class="img-responsive">
 				</div>
 
 				<div class="layer-2"></div>
@@ -36,9 +35,8 @@ get_header(); ?>
 			</div>
 
 			<div class="item">
-				<div class="layer-1">
+				<div class="layer-1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/content/slider-2.jpg'); background-position: center -30px;">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/img/content/slider-2.jpg" class="img-responsive">
 				</div>
 
 				<div class="layer-2">
@@ -51,9 +49,8 @@ get_header(); ?>
 			</div>
 			
 			<div class="item">
-				<div class="layer-1">
+				<div class="layer-1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/content/slider-3.jpg'); background-position: center -30px;">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/img/content/slider-3.jpg" class="img-responsive">
 				</div>
 
 				<div class="layer-2">
@@ -66,9 +63,8 @@ get_header(); ?>
 			</div>
 
 			<div class="item">
-				<div class="layer-1">
+				<div class="layer-1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/content/slider-4.jpg'); background-position: center -30px;">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/img/content/slider-4.jpg" class="img-responsive">
 				</div>
 
 				<div class="layer-2">

@@ -11,6 +11,16 @@ $(function() {
 		speed: 0.4,
 		axis: 'y'
 	});
+
+	$('.header-slider .layer-1').parallax({
+		speed: 0.5,
+		axis: 'y' 
+	});
+
+	$('.header-slider .layer-2').parallax({
+		speed: 0.8,
+		axis: 'y' 
+	});
 });
 
 

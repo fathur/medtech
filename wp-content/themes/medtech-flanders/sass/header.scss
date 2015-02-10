@@ -249,9 +249,6 @@ fieldset[disabled] .navbar-medtech .btn-link {
 $corusel-height: 565px;
 .header-slider {
 
-
-	
-
 	.carousel {
 
 		height: $corusel-height;
@@ -272,26 +269,12 @@ $corusel-height: 565px;
 
 
 			.layer-1 {
+				
 
-				//position: absolute;
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: $corusel-height;
 
-				& > img {
-
-					$blur-slider: 5px;
-					$hue-slider: 30deg;
-
-					-webkit-filter: blur($blur-slider);
-					-moz-filter: blur($blur-slider);
-					-o-filter: blur($blur-slider);
-					-ms-filter: blur($blur-slider);
-					filter: blur($blur-slider);
-
-					/* -webkit-filter: hue-rotate($hue-slider);
-					-moz-filter: hue-rotate($hue-slider);
-					-o-filter: hue-rotate($hue-slider);
-					-ms-filter: hue-rotate($hue-slider);
-					filter: hue-rotate($hue-slider); */
-				}
 			}
 
 			.layer-2 {
@@ -300,13 +283,14 @@ $corusel-height: 565px;
 				margin-right: auto;
 				left: 0;
 				right: 0;
-				bottom: -120px;
+				bottom: 0;
 
 				height: $corusel-height;
 				width: 100%;
 
 				background-image: url('../img/circle.png');
 				background-repeat: no-repeat;
+				background-position: center 0px;
 			}
 
 			.layer-3 {
