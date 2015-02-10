@@ -246,18 +246,86 @@ fieldset[disabled] .navbar-medtech .btn-link {
  * Untuk slider di halaman awal saja
  */
 // -> http://www.weblinc.com/labs/jquery-parallax/
+$corusel-height: 565px;
 .header-slider {
+
 
 	
 
 	.carousel {
-		height: 565px;
+
+		height: $corusel-height;
 		overflow: hidden;
 	}
 
 	.carousel-indicators {
 		text-align: right;
 	}
+
+	.carousel-inner {
+
+		height: $corusel-height;
+
+
+		.item {
+			height: $corusel-height;
+
+
+			.layer-1 {
+
+				//position: absolute;
+
+				& > img {
+
+					$blur-slider: 5px;
+					$hue-slider: 30deg;
+
+					-webkit-filter: blur($blur-slider);
+					-moz-filter: blur($blur-slider);
+					-o-filter: blur($blur-slider);
+					-ms-filter: blur($blur-slider);
+					filter: blur($blur-slider);
+
+					/* -webkit-filter: hue-rotate($hue-slider);
+					-moz-filter: hue-rotate($hue-slider);
+					-o-filter: hue-rotate($hue-slider);
+					-ms-filter: hue-rotate($hue-slider);
+					filter: hue-rotate($hue-slider); */
+				}
+			}
+
+			.layer-2 {
+				position: absolute;
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+				bottom: -120px;
+
+				height: $corusel-height;
+				width: 100%;
+
+				background-image: url('../img/circle.png');
+				background-repeat: no-repeat;
+			}
+
+			.layer-3 {
+				position: absolute;
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+				bottom: 55px;
+				width: $container-width;
+				padding-right: $container-width * 0.5;
+
+				font-size: 30px;
+				text-align: left;
+				text-shadow: none;
+			}
+		}
+	}
+	/* 
 
 	.carousel-inner {
 		.item {
@@ -277,7 +345,7 @@ fieldset[disabled] .navbar-medtech .btn-link {
 
 			
 		}
-	}
+	} */
 }
 
 /**

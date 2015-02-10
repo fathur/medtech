@@ -14,9 +14,9 @@
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
 	<?php wp_head(); ?>
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-
+ -->
 </head>
 <body>
 	<!--[if lt IE 7]>

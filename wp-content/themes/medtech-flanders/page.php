@@ -11,14 +11,18 @@
 get_header(); ?>
 
 <div class="fluid-container header header-content">
-	<div class="circle">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/circle.png" class="img-responsive">
+	<div class="circle" 
+		style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/circle.png');
+		background-repeat: no-repeat; 
+		background-position: center -140px;">
 	</div>
 
-	<div class="image">
-		<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
-			<?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
-		<?php endif; ?>
+	<?php $thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) ); ?>
+
+	<div class="image" style="background-image: url('<?php echo $thumbnail_url; ?>');
+		background-repeat: no-repeat; 
+		background-position: center -30px;
+		background-size: cover;">
 	</div>
 
 </div>

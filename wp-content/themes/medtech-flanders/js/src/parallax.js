@@ -1,7 +1,18 @@
-/*$('.header-slider').parallax({
-	speed: 0.2,
-	axis: 'y'
-});*/
+
+$(function() {
+
+	// Parallax header content
+	$('.header-content .circle').parallax({
+		speed: 0.7,
+		axis: 'y' 
+	});
+
+	$('.header-content .image').parallax({
+		speed: 0.4,
+		axis: 'y'
+	});
+});
+
 
 /**
  * Check height header slider in home
