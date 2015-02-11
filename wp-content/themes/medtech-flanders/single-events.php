@@ -8,13 +8,17 @@
 get_header(); ?>
 
 <div class="fluid-container header header-content">
-	<div class="circle">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/circle.png" class="img-responsive">
+	<div class="circle" 
+		style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/circle.png');
+		background-repeat: no-repeat; 
+		background-position: center -140px;">
 	</div>
 
-	<div class="image">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/content/aboutus.jpg" class="img-responsive">
-		
+
+	<div class="image" style="background-image: url('http://localhost/medtech-flanders/wp-content/uploads/2015/02/aboutus.jpg');
+		background-repeat: no-repeat; 
+		background-position: center -30px;
+		background-size: cover;">
 	</div>
 </div>
 
@@ -28,7 +32,7 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title(); ?> <span class="date"><?php echo date("d.m.y", types_render_field('event-date', array( 'raw' => 'true' ))); ?></span></h1>
 
-						<h3 class="introduction"><?php the_excerpt(); ?></h3>
+						<h2 class="introduction"><?php echo get_the_excerpt(); ?></h2>
 
 						<?php the_content(); ?>
 					<?php endwhile; ?>
@@ -55,11 +59,12 @@ get_header(); ?>
 					</ul>
 				</div>
 
-				<div class="col-xs-12 register-now">
-					<a href="<?php echo get_post_meta(get_the_ID(), 'wpcf-event-register-link', true); ?>" class="btn btn-medtech" target="__blank">
-						<img src="img/check.png">
-						Register Now
-					</a>
+				<div class="col-xs-12">
+					
+					<?php echo do_shortcode('[btn-icon 
+						url="'.types_render_field('event-register-link', array( 'raw' => 'true')).'" 
+						icon="'.get_template_directory_uri().'/img/check.png"
+						text="Register Now"]') ; ?>
 				</div>
 				
 			</div>

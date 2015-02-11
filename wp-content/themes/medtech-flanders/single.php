@@ -8,7 +8,18 @@
 get_header(); ?>
 
 <div class="fluid-container header header-content">
+	<div class="circle" 
+		style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/circle.png');
+		background-repeat: no-repeat; 
+		background-position: center -140px;">
+	</div>
 
+
+	<div class="image" style="background-image: url('http://localhost/medtech-flanders/wp-content/uploads/2015/02/aboutus.jpg');
+		background-repeat: no-repeat; 
+		background-position: center -30px;
+		background-size: cover;">
+	</div>
 </div>
 
 <div class="container body">

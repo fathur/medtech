@@ -51,9 +51,29 @@ add_filter('the_content', 'add_responsive_class');
  * Add shortcode for membership page
  */
 function button_view_members() {
-	return "<p class='view-members'><a href='".get_post_type_archive_link('member-list')."' class='btn btn-lg btn-medtech btn-view-member'><img src='".get_template_directory_uri()."/img/handshake.png'> View Members</a></p>";
+	return "<a href='".get_post_type_archive_link('member-list')."' class='btn btn-lg btn-medtech btn-view-member'><img src='".get_template_directory_uri()."/img/handshake.png'> View Members</a>";
 }
 add_shortcode('btn-members', 'button_view_members');
+
+
+function button_icon($attr)
+{
+	$icon 		= $attr['icon'];
+	$url 		= $attr['url'];
+	$target 	= isset($attr['target']) ? $attr['target'] : 'self';
+	$text 		= $attr['text'];
+	$class 		= isset($attr['class']) ? $attr['class'] : '';
+
+	if (isset($icon) || $icon !== '') {
+		$icon = "<img src='".$icon."' />&nbsp;&nbsp;";
+	}
+
+	return "<a href='".$url."' class='btn btn-medtech ".$class."' target='". $target	."'>". $icon . $text. "</a>";
+
+}
+add_shortcode('btn-icon', 'button_icon');
+
+
 
 require get_template_directory() . '/inc/helper.php';
 require get_template_directory() . '/inc/infinite-scroll.php';

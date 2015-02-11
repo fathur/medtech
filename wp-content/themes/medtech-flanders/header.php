@@ -32,17 +32,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<?php echo home_url(); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" class="img-responsive">
 				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right" role="menu">
-					<li><a href="http://localhost/medtech-flanders/about-us/">About Us</a></li>
-					<li><a href="news.html">News</a></li>
-					<li class="active"><a href="http://localhost/medtech-flanders/events/">Events</a></li>
-					<li><a href="membership.html">Membership</a></li>
-					<li><a href="jobs.html">Jobs</a></li>
+					<li><a href="<?php echo home_url(); ?>/about-us/">About Us</a></li>
+					<li><a href="<?php echo home_url(); ?>/news/">News</a></li>
+					<li class="active"><a href="<?php echo home_url(); ?>/events/">Events</a></li>
+					<li><a href="<?php echo home_url(); ?>/membership">Membership</a></li>
+					<li><a href="<?php echo home_url(); ?>/jobs">Jobs</a></li>
 				</ul>
 			</div><!--/.navbar-collapse -->
 		</div>

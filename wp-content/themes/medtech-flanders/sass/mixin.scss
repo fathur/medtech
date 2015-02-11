@@ -1,0 +1,50 @@
+@mixin article-loop {
+
+	.item {
+
+		padding: {
+			top: 20px;
+			bottom: 25px;
+		}
+
+		margin: {
+			bottom: 25px;
+		}
+
+		p {
+			padding-bottom: 0px;
+		}
+	}
+}
+
+@mixin article-single {
+
+	&.detail {
+
+		padding-bottom: 50px;
+		
+		h1 {
+			padding: {
+				bottom: 30px;
+			}
+		}
+
+		h2 {
+			padding: {
+				top: 0px;
+				bottom: 20px;
+			}
+
+			line-height: 1.3;
+			font-weight: 400;
+			margin: 0px;
+		}	
+
+		h3 {
+			padding: {
+				top: 20px;
+				bottom: 0px;
+			}
+		}
+	}
+}

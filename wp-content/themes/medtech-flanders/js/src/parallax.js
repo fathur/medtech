@@ -13,12 +13,12 @@ $(function() {
 	});
 
 	$('.header-slider .layer-1').parallax({
-		speed: 0.5,
+		speed: 0.3,
 		axis: 'y' 
 	});
 
 	$('.header-slider .layer-2').parallax({
-		speed: 0.8,
+		speed: 0.5,
 		axis: 'y' 
 	});
 });

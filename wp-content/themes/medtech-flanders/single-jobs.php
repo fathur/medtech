@@ -8,7 +8,18 @@
 get_header(); ?>
 
 <div class="fluid-container header header-content">
+	<div class="circle" 
+		style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/circle.png');
+		background-repeat: no-repeat; 
+		background-position: center -140px;">
+	</div>
 
+
+	<div class="image" style="background-image: url('http://localhost/medtech-flanders/wp-content/uploads/2015/02/aboutus.jpg');
+		background-repeat: no-repeat; 
+		background-position: center -30px;
+		background-size: cover;">
+	</div>
 </div>
 
 <div class="container body">
@@ -22,21 +33,21 @@ get_header(); ?>
 						<h1><?php the_title(); ?></h1>
 
 						<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
-							<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-featured')); ?>
+							<?php the_post_thumbnail('full', array('class' => 'img-responsive img-featured')); ?>
 						<?php else: ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/img/no-image.jpg" class="img-responsive img-featured">
 						<?php endif; ?>
 
 						<?php the_content(); ?>
 					<?php endwhile; ?>
-				</article>
 
-				<div class="col-xs-12 register-now">
-						
-					<a href="<?php echo types_render_field('job-link', array( 'raw' => 'true')); ?>" target="__blank" class="btn btn-medtech btn-lg">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/download.png">&nbsp;&nbsp;See Original Job Post
-					</a>
-				</div>
+					<?php echo do_shortcode('[btn-icon 
+						url="'.types_render_field('job-link', array( 'raw' => 'true')).'" 
+						target="__blank" class="btn-lg" 
+						icon="'.get_template_directory_uri().'/img/download.png"
+						text="See Original Job Post"]') ; ?>
+
+				</article>
 				
 			</div>
 

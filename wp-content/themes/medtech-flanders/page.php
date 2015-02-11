@@ -31,14 +31,14 @@ get_header(); ?>
 	<div class="row">
 		
 		<div class="col-sm-9 content">
-			<div class="row <?php medtech_class(); ?>">
-				<div class="col-xs-12">
+			<div class="row detail <?php medtech_class(); ?>">
+				<article class="col-xs-12">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'content', 'page-single' ); ?>
 					<?php endwhile; ?>
 
-				</div>
+				</article>
 			</div>
 		</div>
 
