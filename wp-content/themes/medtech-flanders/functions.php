@@ -4,6 +4,7 @@ add_theme_support( "post-thumbnails" );
 add_theme_support( "title-tag" );
 add_theme_support( "custom-header", array() );
 add_theme_support( "custom-background", array() );
+add_theme_support('widgets');
 
 add_theme_support( 'html5', array( 'search-form', 'caption' ) );
 add_theme_support( 'automatic-feed-links' );
@@ -73,7 +74,78 @@ function button_icon($attr)
 }
 add_shortcode('btn-icon', 'button_icon');
 
+/**
+ * Infinite Scroll
+ */
 
+// Mendaftarkan fungsi ke dalam AJAX wordpress.
+// Baik dalam halaman yang membutuhkan privilege atau tidak.
+add_action('wp_ajax_load_infinite_scroll','load_infinite_scroll');
+add_action('wp_ajax_nopriv_load_infinite_scroll','load_infinite_scroll');
+
+function load_infinite_scroll() {
+
+	// Mendapatkan file yang dipanggiil saat di loop.
+	$loop_file	= $_GET['loop_file']; 
+
+	// Mendapatkan post type content
+	// untuk dimasukan dalam WP_Query.
+	$post_type	= $_GET['post_type'];
+
+	// Mendapatkan halaman pagination.
+	// Validasi bahwa halaman adalah berbentuk integer.
+	$paged		= intval($_GET['page_no']);
+
+	// Mengambil option dari setting
+	// jumlah halaman yang akan ditampilkan
+	$posts_per_page	= get_option('posts_per_page');
+
+	// WP_Query in action, mengambil artikel
+	// sesuai dengan yang diinginkan.
+	$query = new WP_Query( array(
+		'post_type' 		=> $post_type,
+		'posts_per_page' 	=> $posts_per_page,
+		'paged'				=> $paged
+	) );
+	
+	// Menampilkan hasil konten, hasil ajax request
+	if ( $query->have_posts() ) : 
+		 while ( $query->have_posts() ) : $query->the_post(); 
+			get_template_part( 'content', $loop_file ); 
+		 endwhile; 
+ 	endif; 
+
+ 	wp_reset_postdata();
+ 	wp_reset_query();
+
+ 	// Mematikan action ajax, 
+ 	// agar tidak memunculkan angka 0 saat request.
+	exit;
+}
+
+/**
+ * Register sidebar
+ */
+add_action( 'widgets_init', function() {
+	register_sidebar(array(
+		'name'	=> 'Top Right Sidebar',
+		'id'	=> 'sidebar-1'
+	));
+});
+
+add_action( 'widgets_init', function() {
+	register_sidebar(array(
+		'name'	=> 'Second Right Sidebar',
+		'id'	=> 'sidebar-2'
+	));
+});
 
 require get_template_directory() . '/inc/helper.php';
-require get_template_directory() . '/inc/infinite-scroll.php';
+
+require get_template_directory() . '/inc/get_in_touch.widget.php';
+require get_template_directory() . '/inc/other_jobs.widget.php';
+require get_template_directory() . '/inc/save_date.widget.php';
+require get_template_directory() . '/inc/reasons_join.widget.php';
+require get_template_directory() . '/inc/upcoming_events.widget.php';
+require get_template_directory() . '/inc/members.widget.php';
+

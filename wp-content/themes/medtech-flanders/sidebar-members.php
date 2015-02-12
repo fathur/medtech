@@ -45,7 +45,8 @@ $query = new WP_Query(array(
 		
 	</div>
 
-	<?php endif; ?>
+	<?php endif; 
+	wp_reset_postdata();?>
 
 </div>
 <?php endif; ?>
