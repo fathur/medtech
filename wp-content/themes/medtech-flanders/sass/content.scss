@@ -1,5 +1,32 @@
 .wp-caption {
+
 	width: 100% !important;
+	position: relative;
+
+	.wp-caption-text {
+		background-image: url('../img/dot-blue.png');
+		padding: 10px 15px;
+		position: absolute;
+		width: 100%;
+		bottom: 0px;
+		color: #FFF;
+	}
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .content {
@@ -28,7 +55,6 @@
 			line-height: 1.7;
 		}
 
-		
 		h3 > a {
 			
 			margin: -10px 0px 0px 0px;
@@ -41,8 +67,6 @@
 				color: $black;
 			}
 		}
-
-
 
 		p {
 			margin: 0px;
@@ -120,11 +144,15 @@
 
 	.member-list {
 
-		
+		@include article-single;
 
 		.members {
 
-			margin-bottom: 45px;
+			padding: {
+				bottom: 20px;
+				top:10px;
+			}
+
 			.item {
 
 				& > img {

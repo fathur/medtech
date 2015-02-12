@@ -8,12 +8,17 @@
 get_header(); ?>
 
 <div class="fluid-container header header-content">
-	<div class="circle">
-		<img src="img/circle.png" class="img-responsive">
+	<div class="circle" 
+		style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/circle.png');
+		background-repeat: no-repeat; 
+		background-position: center -140px;">
 	</div>
 
-	<div class="image">
-		<img src="img/content/aboutus.jpg" class="img-responsive">
+
+	<div class="image" style="background-image: url('http://localhost/medtech-flanders/wp-content/uploads/2015/02/aboutus.jpg');
+		background-repeat: no-repeat; 
+		background-position: center -30px;
+		background-size: cover;">
 	</div>
 </div>
 
@@ -21,7 +26,7 @@ get_header(); ?>
 	<div class="row">
 		
 		<div class="col-sm-9 content">
-			<div class="row <?php medtech_class(); ?>">
+			<div class="row detail <?php medtech_class(); ?>">
 				<div class="col-xs-12">
 					<h1>Our members are an broad mix of medical technology companies.</h1>
 					<h3>Meet the members.</h3>
