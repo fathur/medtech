@@ -24,57 +24,6 @@ function load_scripts() {
 add_action('wp_enqueue_scripts','load_scripts');
 
 /**
- * Adding additional default css class responsive 
- * into every image inside content
- * 
- * @reference 	http://stackoverflow.com/questions/20473004/how-to-add-automatic-class-in-image-for-wordpress-post
- * 
- */
-function add_responsive_class($content){
-
-	$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
-	$document = new DOMDocument();
-	libxml_use_internal_errors(true);
-	$document->loadHTML(utf8_decode($content));
-
-	$imgs = $document->getElementsByTagName('img');
-	foreach ($imgs as $img) {           
-		$existing_class = $img->getAttribute('class');
-		$img->setAttribute('class', "$existing_class img-responsive");
-	}
-
-	$html = $document->saveHTML();
-	return $html;   
-}
-add_filter('the_content', 'add_responsive_class');
-
-/**
- * Add shortcode for membership page
- */
-function button_view_members() {
-	return "<a href='".get_post_type_archive_link('member-list')."' class='btn btn-lg btn-medtech btn-view-member'><img src='".get_template_directory_uri()."/img/handshake.png'> View Members</a>";
-}
-add_shortcode('btn-members', 'button_view_members');
-
-
-function button_icon($attr)
-{
-	$icon 		= $attr['icon'];
-	$url 		= $attr['url'];
-	$target 	= isset($attr['target']) ? $attr['target'] : 'self';
-	$text 		= $attr['text'];
-	$class 		= isset($attr['class']) ? $attr['class'] : '';
-
-	if (isset($icon) || $icon !== '') {
-		$icon = "<img src='".$icon."' />&nbsp;&nbsp;";
-	}
-
-	return "<a href='".$url."' class='btn btn-medtech ".$class."' target='". $target	."'>". $icon . $text. "</a>";
-
-}
-add_shortcode('btn-icon', 'button_icon');
-
-/**
  * Infinite Scroll
  */
 
@@ -140,12 +89,77 @@ add_action( 'widgets_init', function() {
 	));
 });
 
+/**
+ * Adding additional default css class responsive 
+ * into every image inside content
+ * 
+ * @reference 	http://stackoverflow.com/questions/20473004/how-to-add-automatic-class-in-image-for-wordpress-post
+ * 
+ */
+function add_responsive_class($content){
+
+	$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+	$document = new DOMDocument();
+	libxml_use_internal_errors(true);
+	$document->loadHTML(utf8_decode($content));
+
+	$imgs = $document->getElementsByTagName('img');
+	foreach ($imgs as $img) {           
+		$existing_class = $img->getAttribute('class');
+		$img->setAttribute('class', "$existing_class img-responsive");
+	}
+
+	$html = $document->saveHTML();
+	return $html;   
+}
+add_filter('the_content', 'add_responsive_class');
+
+/**
+ * Remove exceprt [...]
+ */
+function new_excerpt_more($more)
+{
+	return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+ * Add shortcode for membership page
+ */
+function button_view_members() {
+	return "<a href='".get_post_type_archive_link('member-list')."' class='btn btn-lg btn-medtech btn-view-member'><img src='".get_template_directory_uri()."/img/handshake.png'> View Members</a>";
+}
+add_shortcode('btn-members', 'button_view_members');
+
+
+function button_icon($attr)
+{
+	$icon 		= $attr['icon'];
+	$url 		= $attr['url'];
+	$target 	= isset($attr['target']) ? $attr['target'] : 'self';
+	$text 		= $attr['text'];
+	$class 		= isset($attr['class']) ? $attr['class'] : '';
+
+	if (isset($icon) || $icon !== '') {
+		$icon = "<img src='".$icon."' />&nbsp;&nbsp;";
+	}
+
+	return "<a href='".$url."' class='btn btn-medtech ".$class."' target='". $target	."'>". $icon . $text. "</a>";
+
+}
+add_shortcode('btn-icon', 'button_icon');
+
+
 require get_template_directory() . '/inc/helper.php';
 
 require get_template_directory() . '/inc/get_in_touch.widget.php';
 require get_template_directory() . '/inc/other_jobs.widget.php';
+require get_template_directory() . '/inc/other_news.widget.php';
 require get_template_directory() . '/inc/save_date.widget.php';
 require get_template_directory() . '/inc/reasons_join.widget.php';
 require get_template_directory() . '/inc/upcoming_events.widget.php';
+require get_template_directory() . '/inc/past_events.widget.php';
 require get_template_directory() . '/inc/members.widget.php';
+require get_template_directory() . '/inc/want_to_join.widget.php';
+
 

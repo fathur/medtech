@@ -23,16 +23,16 @@ class Save_Date extends WP_Widget {
 
 	public function widget()
 	{
-		$query = new WP_Query(array(
-			'post_type'	=> 'events'
-		));
+		if( is_front_page() ): 
 
-		if ($query->have_posts()) {
+			$query = new WP_Query(array(
+				'post_type'	=> 'events'
+			));
 
-
+			if ($query->have_posts()) {
 		?>
 
-		<div class="row save-date">
+		<div class="row item save-date">
 			<h2>Save The Date</h2>
 
 			<?php  
@@ -71,9 +71,11 @@ class Save_Date extends WP_Widget {
 		
 		<?php
 
-		}
+			}
 
-		wp_reset_postdata();
+			wp_reset_postdata();
+
+		endif;
 	}
 
 	public function update()

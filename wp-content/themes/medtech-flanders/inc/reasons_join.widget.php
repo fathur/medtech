@@ -23,10 +23,14 @@ class Reasons_Join extends WP_Widget {
 
 	public function widget($args, $instance)
 	{
+		if( is_page('about-us') ||
+			is_post_type_archive('events') ||
+			is_post_type_archive('jobs') ||
+			is_front_page() ):
 		
 		?>
 		
-		<div class="row reasons-join">
+		<div class="row item reasons-join">
 			<h2>Reasons To Join</h2>
 
 			<ul class="list-unstyled">
@@ -43,7 +47,7 @@ class Reasons_Join extends WP_Widget {
 		</div>
 
 		<?php
-		
+		endif;
 		
 	}
 

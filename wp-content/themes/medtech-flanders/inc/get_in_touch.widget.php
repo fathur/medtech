@@ -23,9 +23,13 @@ class Get_In_Touch extends WP_Widget {
 
 	public function widget()
 	{
+		if( is_page('about-us') ||
+			is_page('membership') ||
+			is_post_type_archive('events') ||
+			is_post_type_archive('jobs') ):
 		?>
 		
-		<div class="row get-touch">
+		<div class="row item get-touch">
 			<h2><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> Get In Touch</h2>
 
 			<p><b>MedTech Flanders vzw</b>
@@ -49,6 +53,7 @@ class Get_In_Touch extends WP_Widget {
 		</div>
 
 		<?php
+		endif;
 	}
 
 	public function update()

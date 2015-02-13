@@ -24,15 +24,23 @@ class Upcoming_Events extends WP_Widget {
 
 	public function widget()
 	{
-		$query = new WP_Query(array(
-			'post_type'	=> 'events'
-		));
+		if( is_page('about-us') || 
+			is_page('membership') ||
+			is_singular('events') || 
+			is_singular('jobs') || 
+			is_singular('post') ||  // Muncul di news
+			is_post_type_archive('jobs') ||
+			is_front_page() ):
 
-		if ($query->have_posts()) {
+			$query = new WP_Query(array(
+				'post_type'	=> 'events'
+			));
+
+			if ($query->have_posts()) {
 
 		?>
 
-		<div class="row events">
+		<div class="row item events">
 			<h2>Upcoming event</h2>
 			<ul class="list-unstyled">
 
@@ -53,9 +61,11 @@ class Upcoming_Events extends WP_Widget {
 		
 		<?php
 
-		}
+			}
 
-		wp_reset_postdata();
+			wp_reset_postdata();
+
+		endif;
 	}
 
 	public function update()

@@ -29,11 +29,15 @@
 	margin-left: auto;
 }
 
+.text-blue {
+	color: $blue;
+}
+
+.text-black {
+	color: $black
+}
+
 .content {
-
-	padding-bottom: 100px;
-
-
 
 	h3,
 	h3 > a {
@@ -72,7 +76,7 @@
 			margin: 0px;
 			padding-top: 10px;
 			padding-bottom: 20px;
-			line-height: 1.7;
+			line-height: 1.5;
 		}
 	}
 
@@ -208,6 +212,10 @@
 				background-repeat: no-repeat;
 				background-position: 4px 0px;
 				padding: 3px 0 3px 35px;
+			}
+
+			.img-featured {
+				width: 100%;
 			}
 		}
 

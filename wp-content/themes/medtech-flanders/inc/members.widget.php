@@ -23,15 +23,23 @@ class Members extends WP_Widget {
 
 	public function widget()
 	{
-		$query = new WP_Query(array(
-			'post_type'	=> 'member-list',
-			'orderby'        => 'rand',
-		));
+		if( is_page('about-us') || 
+			is_singular('events') || 
+			is_singular('jobs') || 
+			is_singular('post') ||  // Muncul di news
+			is_post_type_archive('events') ||
+			is_post_type_archive('jobs') ||
+			is_front_page() ):
 
-		if ($query->have_posts()) {
+			$query = new WP_Query(array(
+				'post_type'	=> 'member-list',
+				'orderby'	=> 'rand',
+			));
+
+			if ($query->have_posts()) {
 		?>
 
-		<div class="row members">
+		<div class="row item members">
 			<h2>Members</h2>
 
 			<div id="members" class="carousel slide" data-ride="carousel">
@@ -66,9 +74,11 @@ class Members extends WP_Widget {
 		
 		<?php
 		
-		}
+			}
 
-		wp_reset_postdata();
+			wp_reset_postdata();
+
+		endif;
 
 	}
 

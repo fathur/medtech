@@ -1,57 +1,62 @@
 <?php
 
-
 /**
- * Other Jobs
+ * Reasons_Join
  */
 
 add_action('widgets_init', function() {
-	register_widget('Other_Jobs');
+	register_widget('Other_News');
 });
 
-class Other_Jobs extends WP_Widget {
+class Other_News extends WP_Widget {
 
 	public function __construct()
 	{
 		parent::__construct(
-			'Other_Jobs', // ID
-			'MedTech - Other Jobs', // Display Name
+			'Other_News', // ID
+			'MedTech - Other News', // Display Name
 			array(
-				'description'	=> 'Display other jobs'
+				'description'	=> 'Widget description'
 			)
 		);
 	}
 
 	public function widget($args, $instance)
-	{ 
-		if( is_singular('jobs') ):
+	{
+		if( is_singular('post') ):
+
+			global $post;
 
 			$query = new WP_Query(array(
-				'post_type'	=> 'jobs'
+				'post_type'	=> 'post',
+				'post__not_in' => array( $post->ID )
 			));
 
 			if ($query->have_posts()) {
-
+		
 		?>
-
+		
 		<div class="row item bg-gray">
-			<h2>Other Jobs</h2>
+			<h2>Other News</h2>
+			
 			<ul class="list-unstyled">
-
 				<?php  while($query->have_posts()): $query->the_post(); ?>
+
 				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				<?php endwhile; ?>
 
 			</ul>
-		</div>
-		
-		<?php
 
-			}
+		</div>
+
+		<?php
 			
+			}
+
 			wp_reset_postdata();
 
 		endif;
+		
 	}
 
 	public function update()
@@ -63,4 +68,4 @@ class Other_Jobs extends WP_Widget {
 	{
 
 	}
-} // End Other_Jobs
+} // End Reasons_Join

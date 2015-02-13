@@ -27,6 +27,7 @@ get_header(); ?>
 		
 		<div class="col-sm-9 content">
 			<div class="row detail <?php medtech_class(); ?>">
+
 				<div class="col-xs-12">
 					<h1>Our members are an broad mix of medical technology companies.</h1>
 					<h3>Meet the members.</h3>
