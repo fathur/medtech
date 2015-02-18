@@ -30,6 +30,8 @@ get_header(); ?>
 
 				<div class="col-xs-12">
 					<h1>Our members are an broad mix of medical technology companies.</h1>
+					<?php edit_post_link( 'edit', '<span class="edit-link glyphicon glyphicon-pencil">', '</span>' ); ?>
+
 					<h3>Meet the members.</h3>
 				</div>
 				<div class="col-xs-12">

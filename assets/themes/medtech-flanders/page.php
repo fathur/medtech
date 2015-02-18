@@ -34,6 +34,9 @@ get_header(); ?>
 			<div class="row detail <?php medtech_class(); ?>">
 				<article class="col-xs-12">
 
+					<?php edit_post_link( 'edit', '<span class="edit-link glyphicon glyphicon-pencil">', '</span>' ); ?>
+
+
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'content', 'page-single' ); ?>
 					<?php endwhile; ?>

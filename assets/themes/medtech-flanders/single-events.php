@@ -32,6 +32,8 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title(); ?> <span class="date"><?php echo date("d.m.y", types_render_field('event-date', array( 'raw' => 'true' ))); ?></span></h1>
 
+						<?php edit_post_link( 'edit', '<span class="edit-link glyphicon glyphicon-pencil">', '</span>' ); ?>
+
 						<h2 class="introduction"><?php echo get_the_excerpt(); ?></h2>
 
 						<?php the_content(); ?>

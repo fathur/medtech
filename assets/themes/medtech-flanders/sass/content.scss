@@ -37,6 +37,17 @@
 	color: $black
 }
 
+.edit-link {
+	position: absolute;
+	right: 0;
+	opacity: .3;
+
+	&:hover {
+		opacity: 1;
+		text-decoration: none;
+	}
+}
+
 .content {
 
 	h3,

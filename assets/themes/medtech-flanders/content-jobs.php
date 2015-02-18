@@ -9,6 +9,9 @@
 					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php endif; ?>
 
+				<?php edit_post_link( 'edit', '<span class="edit-link glyphicon glyphicon-pencil">', '</span>' ); ?>
+
+
 			</div>
 		</div>
 

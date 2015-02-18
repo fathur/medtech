@@ -1,5 +1,5 @@
 design/node_modules/
-wp-content/themes/medtech-flanders/node_modules/
+assets/themes/medtech-flanders/node_modules/
 design/.sass-cache/
-wp-content/themes/medtech-flanders/.sass-cache/
-wp-content/uploads/
+assets/themes/medtech-flanders/.sass-cache/
+assets/uploads/

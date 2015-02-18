@@ -14,6 +14,8 @@
 			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<?php endif; ?>
 
+		<?php edit_post_link( 'edit', '<span class="edit-link glyphicon glyphicon-pencil">', '</span>' ); ?>
+
 		<div class="day-date"><?php echo date("l d.m.y", types_render_field('event-date', array( 'raw' => "true" ))); ?></div>
 		
 		<div class="place"><?php echo get_post_meta(get_the_ID(), 'wpcf-event-location', true); ?></div>
