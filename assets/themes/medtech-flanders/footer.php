@@ -26,7 +26,7 @@
 		</div>
 	</footer>
 
-	<script>window.jQuery || document.write('<script src="wp-content/themes/medtech-flanders/js/jquery-1.11.1.min.js"><\/script>')</script>
+	<script>window.jQuery || document.write('<script src="assets/themes/medtech-flanders/js/jquery-1.11.1.min.js"><\/script>')</script>
 
 	<?php wp_footer(); ?>
 

@@ -15,7 +15,7 @@ get_header(); ?>
 	</div>
 
 
-	<div class="image" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2015/02/aboutus.jpg');
+	<div class="image" style="background-image: url('<?php echo home_url(); ?>/assets/uploads/2015/02/aboutus.jpg');
 		background-repeat: no-repeat; 
 		background-position: center -30px;
 		background-size: cover;">
