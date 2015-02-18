@@ -37,13 +37,14 @@
 				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right" role="menu">
+				<!-- <ul class="nav navbar-nav navbar-right" role="menu">
 					<li><a href="<?php echo home_url(); ?>/about-us/">About Us</a></li>
 					<li><a href="<?php echo home_url(); ?>/news/">News</a></li>
 					<li class="active"><a href="<?php echo home_url(); ?>/events/">Events</a></li>
 					<li><a href="<?php echo home_url(); ?>/membership">Membership</a></li>
 					<li><a href="<?php echo home_url(); ?>/jobs">Jobs</a></li>
-				</ul>
+				</ul> -->
+				<?php medtech_display_menu(); ?>
 			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>

@@ -4,9 +4,10 @@
  * Members
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_members');
+function register_widget_members() {
 	register_widget('Members');
-});
+}
 
 class Members extends WP_Widget {
 

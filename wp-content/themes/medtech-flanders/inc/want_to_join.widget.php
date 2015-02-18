@@ -4,9 +4,10 @@
  * Get In Touch Widget
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_want_to_join');
+function register_widget_want_to_join() {
 	register_widget('Want_To_Join');
-});
+}
 
 class Want_To_Join extends WP_Widget {
 
@@ -16,39 +17,62 @@ class Want_To_Join extends WP_Widget {
 			'Want_To_Join', // ID
 			'MedTech - Want To Join', // Display Name
 			array(
-				'description'	=> 'Address how to contacting MedTech Flanders.'
+				'description'	=> 'This widget just show in member list archive'
 			)
 		);
 	}
 
-	public function widget()
+	public function widget($args, $instance)
 	{
 		if( is_post_type_archive('member-list') ):
+
+			$title = apply_filters('widget_title', $instance['title']);
 		?>
 		
 		<div class="row item bg-white">
-			<h2 class="text-blue"><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> Want to join?</h2>
+			<h2 class="text-blue"><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> <?php echo $title; ?></h2>
 
-			<p>Here are some good reasons why your company should join MedTech Flanders:</p>
+			<?php echo $instance['content']; ?>
 
-			<ul class="list-unstyled">
-				<li>Connect with other med-tech companies</li>
-				<li>Stay up-to-date</li>
-				<li>Share infrastructure and lower overhead costs</li>
-			</ul>
 		</div>
 
 		<?php
 		endif;
 	}
 
-	public function update()
+	public function update($new, $old)
 	{
-		# code...
+		$instance = array();
+
+		$instance['title'] = ( !empty($new['title'])) ? strip_tags($new['title']) : '' ;
+		$instance['content'] = ( !empty($new['content'])) ? $new['content'] : '' ;
+
+		return $instance;
 	}
 
-	public function form()
+	public function form($instance)
 	{
-		# code...
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+			$content = $instance['content'];
+		} else {
+			$title = 'Want to Join';
+			$content = '';
+		}
+
+		?>
+		<p>This widget just show in member list archive</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
+
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('content'); ?>">Html Content</label>
+			<textarea class="widefat" id="<?php echo $this->get_field_id('content'); ?>" name="<?php echo $this->get_field_name('content'); ?>"><?php echo $content; ?></textarea>
+		</p>
+		<?php
 	}
 }

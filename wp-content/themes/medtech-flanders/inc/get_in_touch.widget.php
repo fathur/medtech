@@ -4,9 +4,10 @@
  * Get In Touch Widget
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_get_in_touch');
+function register_widget_get_in_touch() {
 	register_widget('Get_In_Touch');
-});
+}
 
 class Get_In_Touch extends WP_Widget {
 
@@ -16,21 +17,24 @@ class Get_In_Touch extends WP_Widget {
 			'Get_In_Touch', // ID
 			'MedTech - Get In Touch', // Display Name
 			array(
-				'description'	=> 'Address how to contacting MedTech Flanders.'
+				'description'	=> 'This widget just show in page About Us, page Membership, archive Events, and archive Jobs.'
 			)
 		);
 	}
 
-	public function widget()
+	public function widget($args, $instance)
 	{
 		if( is_page('about-us') ||
 			is_page('membership') ||
 			is_post_type_archive('events') ||
 			is_post_type_archive('jobs') ):
+
+			$title = apply_filters('widget_title', $instance['title']);
+
 		?>
 		
 		<div class="row item get-touch">
-			<h2><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> Get In Touch</h2>
+			<h2><img src="<?php echo get_template_directory_uri(); ?>/img/balloon.png"> <?php echo $title; ?></h2>
 
 			<p><b>MedTech Flanders vzw</b>
 			<br/>
@@ -56,13 +60,33 @@ class Get_In_Touch extends WP_Widget {
 		endif;
 	}
 
-	public function update()
+	public function update($new, $old)
 	{
 		# code...
+		$instance = array();
+
+		$instance['title'] = ( !empty($new['title'])) ? strip_tags($new['title']) : '' ;
+
+		return $instance;
 	}
 
-	public function form()
+	public function form($instance)
 	{
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		} else {
+			$title = 'Get in Touch';
+		}
+
+		?>
+		<p>This widget just show in page About Us, page Membership, archive Events, and archive Jobs</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
+
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+		</p>
+		<?php
 		# code...
 	}
 }

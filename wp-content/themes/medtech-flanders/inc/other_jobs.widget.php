@@ -5,9 +5,10 @@
  * Other Jobs
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_other_jobs');
+function register_widget_other_jobs() {
 	register_widget('Other_Jobs');
-});
+}
 
 class Other_Jobs extends WP_Widget {
 

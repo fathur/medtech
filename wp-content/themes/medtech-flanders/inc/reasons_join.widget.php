@@ -4,9 +4,10 @@
  * Reasons_Join
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_reason_join');
+function register_widget_reason_join() {
 	register_widget('Reasons_Join');
-});
+}
 
 class Reasons_Join extends WP_Widget {
 

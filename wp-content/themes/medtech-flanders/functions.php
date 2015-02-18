@@ -75,19 +75,37 @@ function load_infinite_scroll() {
 /**
  * Register sidebar
  */
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', 'register_sidebar_1');
+function register_sidebar_1() {
 	register_sidebar(array(
 		'name'	=> 'Top Right Sidebar',
 		'id'	=> 'sidebar-1'
 	));
-});
+}
 
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', 'register_sidebar_2');
+function register_sidebar_2() {
 	register_sidebar(array(
 		'name'	=> 'Second Right Sidebar',
 		'id'	=> 'sidebar-2'
 	));
-});
+}
+
+/**
+ * Change login logo
+ */
+function medtech_login_logo() { ?>
+<style type="text/css">
+	body.login div#login h1 a {
+		background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png');
+		padding-bottom: 10px;
+		background-size: 100%;
+		margin: 0 auto;
+		width: 100%;
+	}
+</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'medtech_login_logo' );
 
 /**
  * Adding additional default css class responsive 
@@ -151,6 +169,7 @@ add_shortcode('btn-icon', 'button_icon');
 
 
 require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/navigation.php';
 
 require get_template_directory() . '/inc/get_in_touch.widget.php';
 require get_template_directory() . '/inc/other_jobs.widget.php';

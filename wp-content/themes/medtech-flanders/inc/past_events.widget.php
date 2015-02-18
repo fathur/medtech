@@ -5,9 +5,10 @@
  * Other Past_Events
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_past_event');
+function register_widget_past_event() {
 	register_widget('Past_Events');
-});
+}
 
 class Past_Events extends WP_Widget {
 

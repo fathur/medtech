@@ -4,9 +4,10 @@
  * Reasons_Join
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_other_news');
+function register_widget_other_news() {
 	register_widget('Other_News');
-});
+}
 
 class Other_News extends WP_Widget {
 

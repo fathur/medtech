@@ -15,7 +15,7 @@ get_header(); ?>
 	</div>
 
 
-	<div class="image" style="background-image: url('http://localhost/medtech-flanders/wp-content/uploads/2015/02/aboutus.jpg');
+	<div class="image" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2015/02/aboutus.jpg');
 		background-repeat: no-repeat; 
 		background-position: center -30px;
 		background-size: cover;">
@@ -32,11 +32,17 @@ get_header(); ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title(); ?></h1>
 
-						<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
-							<?php the_post_thumbnail('full', array('class' => 'img-responsive img-featured')); ?>
-						<?php else: ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/no-image.jpg" class="img-responsive img-featured">
-						<?php endif; ?>
+						<div class="row">
+							<div class="col-xs-6">
+								
+							<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
+								<?php the_post_thumbnail('full', array('class' => 'img-responsive img-featured')); ?>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/no-image.jpg" class="img-responsive img-featured">
+							<?php endif; ?>
+							
+							</div>
+						</div>
 
 						<?php the_content(); ?>
 					<?php endwhile; ?>

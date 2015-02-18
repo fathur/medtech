@@ -5,9 +5,10 @@
  * Upcoming_Events
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_upcoming_events');
+function register_widget_upcoming_events() {
 	register_widget('Upcoming_Events');
-});
+}
 
 class Upcoming_Events extends WP_Widget {
 

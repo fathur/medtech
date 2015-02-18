@@ -4,9 +4,10 @@
  * Save_Date
  */
 
-add_action('widgets_init', function() {
+add_action('widgets_init', 'register_widget_save_date');
+function register_widget_save_date() {
 	register_widget('Save_Date');
-});
+}
 
 class Save_Date extends WP_Widget {
 
