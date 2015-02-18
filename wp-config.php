@@ -68,13 +68,30 @@ $table_prefix  = 'mf_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
+/** Change folder wp-content name **/
+define ('WP_CONTENT_FOLDERNAME', 'assets');  
+define ('WP_CONTENT_DIR', ABSPATH . WP_CONTENT_FOLDERNAME) ; 
+
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/medtech-flanders/');  
+define('WP_CONTENT_URL', WP_SITEURL . WP_CONTENT_FOLDERNAME);  
+
+/** Disable theme and plugin editor **/
+define('DISALLOW_FILE_EDIT', true);
+
+/** Disable theme or plugin update, set to true **/
+define('DISALLOW_FILE_MODS', false);
+
+/** Change plugin directory **/
+define( 'WP_PLUGIN_DIR', dirname(__FILE__) . '/lib' );
+define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/lib' );
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
