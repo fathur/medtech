@@ -5,10 +5,10 @@ add_theme_support( "title-tag" );
 add_theme_support( "custom-header", array() );
 add_theme_support( "custom-background", array() );
 add_theme_support('widgets');
-
 add_theme_support( 'html5', array( 'search-form', 'caption' ) );
 add_theme_support( 'automatic-feed-links' );
 add_filter('show_admin_bar', '__return_false');
+remove_action('wp_head', 'wp_generator');
 
 function load_scripts() {
 	
