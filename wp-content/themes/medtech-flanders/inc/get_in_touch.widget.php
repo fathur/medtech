@@ -11,15 +11,23 @@ function register_widget_get_in_touch() {
 
 class Get_In_Touch extends WP_Widget {
 
+	private $title = 'Get in Touch';
+	private $description = 'This widget just show in page About Us, page Membership, archive Events, and archive Jobs.';
+
 	public function __construct()
 	{
 		parent::__construct(
-			'Get_In_Touch', // ID
-			'MedTech - Get In Touch', // Display Name
+			$this->title, // ID
+			$this->get_display_name(),
 			array(
-				'description'	=> 'This widget just show in page About Us, page Membership, archive Events, and archive Jobs.'
+				'description' => $this->description
 			)
 		);
+	}
+
+	public function get_display_name()
+	{
+		return 'MedTech - ' . $this->title;
 	}
 
 	public function widget($args, $instance)
@@ -62,7 +70,6 @@ class Get_In_Touch extends WP_Widget {
 
 	public function update($new, $old)
 	{
-		# code...
 		$instance = array();
 
 		$instance['title'] = ( !empty($new['title'])) ? strip_tags($new['title']) : '' ;
@@ -72,21 +79,16 @@ class Get_In_Touch extends WP_Widget {
 
 	public function form($instance)
 	{
-		if (isset($instance['title'])) {
-			$title = $instance['title'];
-		} else {
-			$title = 'Get in Touch';
-		}
+
+		$title = (isset($instance['title'])) ? $instance['title'] : $this->title ;
 
 		?>
-		<p>This widget just show in page About Us, page Membership, archive Events, and archive Jobs</p>
-
+		<p><i><?php echo $this->description; ?></i></p>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
 
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<?php
-		# code...
 	}
 }

@@ -11,15 +11,24 @@ function register_widget_want_to_join() {
 
 class Want_To_Join extends WP_Widget {
 
+	private $title = 'Want to Join';
+	private $description = 'This widget just show in archive Member List.';
+
+
 	public function __construct()
 	{
 		parent::__construct(
-			'Want_To_Join', // ID
-			'MedTech - Want To Join', // Display Name
+			$this->title, // ID
+			$this->get_display_name(),
 			array(
-				'description'	=> 'This widget just show in member list archive'
+				'description' => $this->description
 			)
 		);
+	}
+
+	public function get_display_name()
+	{
+		return 'MedTech - ' . $this->title;
 	}
 
 	public function widget($args, $instance)
