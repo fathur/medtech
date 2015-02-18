@@ -18,7 +18,7 @@ class Want_To_Join extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description

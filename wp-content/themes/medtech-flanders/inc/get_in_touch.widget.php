@@ -17,7 +17,7 @@ class Get_In_Touch extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -80,7 +80,7 @@ class Get_In_Touch extends WP_Widget {
 	public function form($instance)
 	{
 
-		$title = (isset($instance['title'])) ? $instance['title'] : $this->title ;
+		$title = (isset($instance['title']) || $instance['title'] == '') ? $instance['title'] : $this->title ;
 
 		?>
 		<p><i><?php echo $this->description; ?></i></p>

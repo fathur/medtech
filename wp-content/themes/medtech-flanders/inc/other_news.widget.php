@@ -19,7 +19,7 @@ class Other_News extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -36,6 +36,9 @@ class Other_News extends WP_Widget {
 	{
 		if( is_singular('post') ):
 
+			$title = apply_filters('widget_title', $instance['title']);
+			
+
 			global $post;
 
 			$query = new WP_Query(array(
@@ -48,7 +51,7 @@ class Other_News extends WP_Widget {
 		?>
 		
 		<div class="row item bg-gray">
-			<h2>Other News</h2>
+			<h2><?php echo $title; ?></h2>
 			
 			<ul class="list-unstyled">
 				<?php  while($query->have_posts()): $query->the_post(); ?>

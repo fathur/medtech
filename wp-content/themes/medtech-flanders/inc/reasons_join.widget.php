@@ -17,7 +17,7 @@ class Reasons_Join extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -36,11 +36,13 @@ class Reasons_Join extends WP_Widget {
 			is_post_type_archive('events') ||
 			is_post_type_archive('jobs') ||
 			is_front_page() ):
+
+			$title = apply_filters('widget_title', $instance['title']);
 		
 		?>
 		
 		<div class="row item reasons-join">
-			<h2>Reasons To Join</h2>
+			<h2><?php echo $title; ?></h2>
 
 			<ul class="list-unstyled">
 				

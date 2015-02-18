@@ -19,7 +19,7 @@ class Past_Events extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -36,12 +36,15 @@ class Past_Events extends WP_Widget {
 	{ 
 		if( is_post_type_archive('events') ||
 			is_singular('events') ):
+
+			$title = apply_filters('widget_title', $instance['title']);
+
 		?>
 		<div class="row item bg-gray">
-			<h2>Past Event</h2>
+			<h2><?php echo $title; ?></h2>
 			<ul class="list-unstyled">
 
-				<li><a href="#">Past Events</a></li>
+				<li><a href="#">See all past events</a></li>
 
 			</ul>
 		</div>

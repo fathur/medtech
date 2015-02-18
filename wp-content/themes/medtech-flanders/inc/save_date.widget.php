@@ -18,7 +18,7 @@ class Save_Date extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -31,9 +31,12 @@ class Save_Date extends WP_Widget {
 		return 'MedTech - ' . $this->title;
 	}
 
-	public function widget()
+	public function widget($args, $instance)
 	{
 		if( is_front_page() ): 
+
+			$title = apply_filters('widget_title', $instance['title']);
+			
 
 			$query = new WP_Query(array(
 				'post_type'	=> 'events'
@@ -43,7 +46,7 @@ class Save_Date extends WP_Widget {
 		?>
 
 		<div class="row item save-date">
-			<h2>Save The Date</h2>
+			<h2><?php echo $title; ?></h2>
 
 			<?php  
 

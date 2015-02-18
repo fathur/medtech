@@ -19,7 +19,7 @@ class Upcoming_Events extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -32,7 +32,7 @@ class Upcoming_Events extends WP_Widget {
 		return 'MedTech - ' . $this->title;
 	}
 
-	public function widget()
+	public function widget($args, $instance)
 	{
 		if( is_page('about-us') || 
 			is_page('membership') ||
@@ -41,6 +41,9 @@ class Upcoming_Events extends WP_Widget {
 			is_singular('post') ||  // Muncul di news
 			is_post_type_archive('jobs') ||
 			is_front_page() ):
+
+			$title = apply_filters('widget_title', $instance['title']);
+			
 
 			$query = new WP_Query(array(
 				'post_type'	=> 'events'
@@ -51,7 +54,7 @@ class Upcoming_Events extends WP_Widget {
 		?>
 
 		<div class="row item events">
-			<h2>Upcoming event</h2>
+			<h2><?php echo $title; ?></h2>
 			<ul class="list-unstyled">
 
 				<?php  while($query->have_posts()): $query->the_post(); ?>

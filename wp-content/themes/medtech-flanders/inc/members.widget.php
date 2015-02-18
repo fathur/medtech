@@ -18,7 +18,7 @@ class Members extends WP_Widget {
 	public function __construct()
 	{
 		parent::__construct(
-			$this->title, // ID
+			underscore($this->title), // ID
 			$this->get_display_name(),
 			array(
 				'description' => $this->description
@@ -31,7 +31,7 @@ class Members extends WP_Widget {
 		return 'MedTech - ' . $this->title;
 	}
 
-	public function widget()
+	public function widget($args, $instance)
 	{
 		if( is_page('about-us') || 
 			is_singular('events') || 
@@ -40,6 +40,8 @@ class Members extends WP_Widget {
 			is_post_type_archive('events') ||
 			is_post_type_archive('jobs') ||
 			is_front_page() ):
+
+			$title = apply_filters('widget_title', $instance['title']);
 
 			$query = new WP_Query(array(
 				'post_type'	=> 'member-list',
@@ -50,7 +52,7 @@ class Members extends WP_Widget {
 		?>
 
 		<div class="row item members">
-			<h2>Members</h2>
+			<h2><?php echo $title; ?></h2>
 
 			<div id="members" class="carousel slide" data-ride="carousel">
 
