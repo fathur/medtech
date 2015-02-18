@@ -89,7 +89,7 @@ get_header(); ?>
 			$('#paged').val(paged);
 		};
 
-		$.get('<?php echo bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php',{
+		$.get('<?php echo esc_url( site_url() ); ?>/wp-admin/admin-ajax.php',{
 			
 			action: 'load_infinite_scroll',
 			page_no: paged,

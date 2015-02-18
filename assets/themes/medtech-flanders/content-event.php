@@ -1,4 +1,4 @@
-<article class="row item">
+<article class="row item" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="col-sm-4 col-xs-4">
 		<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
 			<?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-featured')); ?>
